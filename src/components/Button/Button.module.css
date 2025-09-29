@@ -1,0 +1,30 @@
+.button {
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.02s ease;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.normal {
+  background-color: #764191;
+  color: #fff;
+}
+
+.normal:hover {
+  background-color: #5f3576;
+}
+
+.reset {
+  background-color: transparent;
+  color: crimson;
+  border: 1px solid crimson;
+}
+
+.reset:hover {
+  background-color: rgba(220, 20, 60, 0.12);
+}

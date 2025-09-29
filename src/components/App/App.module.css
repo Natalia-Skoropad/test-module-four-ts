@@ -1,0 +1,68 @@
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+.card {
+  background: #0f0c14;
+  border: 1px solid #1c1522;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.stack > * + * {
+  margin-top: var(--space-3);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.loaderRow {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-3) 0;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.empty {
+  padding: 12px 14px;
+  border: 1px dashed #2b2137;
+  border-radius: 10px;
+  color: #c9c3cf;
+  background: #100c15;
+}
+
+/* Пагінація */
+.pagination {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.pagination li {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #272133;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pagination li:hover {
+  background: #1b1524;
+}
+
+.active {
+  background: #764191 !important;
+  border-color: #764191 !important;
+  color: #fff;
+}
