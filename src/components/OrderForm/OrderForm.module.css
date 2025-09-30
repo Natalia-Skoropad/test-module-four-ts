@@ -1,0 +1,149 @@
+/* ====== FORM LAYOUT ====== */
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* ====== FIELDSET CARD ====== */
+.fieldset {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #1c1522;
+  border-radius: 16px;
+  background: #0f0c14;
+}
+
+.legend {
+  padding: 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8e0ee;
+}
+
+/* ====== LABELS FOR TEXT INPUTS ====== */
+.fieldset > label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #cfc7d6;
+}
+
+/* ====== INPUTS / SELECT / TEXTAREA ====== */
+.input,
+.textarea,
+.fieldset :global(select) {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: #fff;
+  background: #0c0a10;
+  border: 1px solid #2a2136;
+  border-radius: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #9a9aa0;
+}
+
+.input:focus,
+.textarea:focus,
+.fieldset :global(select:focus) {
+  outline: none;
+  border-color: #764191;
+  box-shadow: 0 0 0 3px rgba(118, 65, 145, 0.25);
+}
+
+/* ====== SELECT ====== */
+.fieldset :global(select) {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 20 20'><path d='M5.5 7l4.5 5 4.5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px 14px;
+}
+
+/* ====== VALIDATION ERROR ====== */
+.error {
+  display: inline-block;
+  min-height: 18px;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #ff6b6b;
+}
+
+/* ===== GROUP LAYOUT INSIDE FIELDSET ===== */
+.optionsGroup {
+  display: grid;
+  gap: 12px;
+}
+
+/* ===== RADIO & CHECKBOX ===== */
+.radioLabel,
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #2a2136;
+  border-radius: 12px;
+  background: #0e0b13;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.radioLabel:hover,
+.checkboxLabel:hover {
+  background: #15101d;
+  border-color: #352743;
+}
+
+.radioLabel:focus-within,
+.checkboxLabel:focus-within {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(118, 65, 145, 0.18);
+  border-color: #6d3d8a;
+}
+
+/* === Fallback === */
+.isChecked {
+  border-color: #764191;
+  box-shadow: inset 0 0 0 1px rgba(118, 65, 145, 0.35);
+  background: #120c19;
+}
+
+.radioLabel :global(input[type="radio"]),
+.checkboxLabel :global(input[type="checkbox"]) {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: #764191;
+  vertical-align: middle;
+  position: relative;
+  top: 0.5px;
+}
+
+.optionText {
+  display: inline-block;
+  line-height: 1.2;
+  color: #e5e7eb;
+}
+
+/* ====== TEXTAREA ====== */
+.textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* ====== SUBMIT BUTTON SPACING ====== */
+.form :global(button[type="submit"]) {
+  margin-top: 4px;
+}

@@ -1,26 +1,33 @@
-import { useEffect, useState } from 'react';
-import { useQuery, keepPreviousData } from '@tanstack/react-query';
+import { useEffect, useState } from "react";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 
-import ReactPaginate from 'react-paginate';
-import toast from 'react-hot-toast';
+import ReactPaginate from "react-paginate";
+import toast from "react-hot-toast";
 
-import { SearchForm, ArticleList, Loader, Button } from '../../index';
-import { fetchArticles } from '../../services/articleService';
+import {
+  SearchForm,
+  ArticleList,
+  Loader,
+  Button,
+  OrderForm,
+} from "../../index";
 
-import clsx from 'clsx';
-import css from './App.module.css';
+import { fetchArticles } from "../../services/articleService";
+
+import clsx from "clsx";
+import css from "./App.module.css";
 
 //===============================================================
 
 function App() {
-  const [topic, setTopic] = useState('');
+  const [topic, setTopic] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [hasSearched, setHasSearched] = useState(false);
 
   const { data, isLoading, isError, isSuccess } = useQuery({
-    queryKey: ['articles', topic, currentPage],
+    queryKey: ["articles", topic, currentPage],
     queryFn: () => fetchArticles(topic, currentPage),
-    enabled: topic.trim() !== '',
+    enabled: topic.trim() !== "",
     placeholderData: keepPreviousData,
   });
 
@@ -34,15 +41,15 @@ function App() {
   };
 
   const handleReset = () => {
-    setTopic('');
+    setTopic("");
     setCurrentPage(1);
     setHasSearched(false);
-    toast.success('Search completed!');
+    toast.success("Search completed!");
   };
 
   useEffect(() => {
     if (isSuccess && hitsCount === 0) {
-      toast('No results found', { icon: '🔍' });
+      toast("No results found", { icon: "🔍" });
     }
   }, [isSuccess, hitsCount]);
 
@@ -99,6 +106,10 @@ function App() {
           )}
         </section>
       )}
+
+      <section className={clsx(css.card, css.stack)}>
+        <OrderForm />
+      </section>
     </div>
   );
 }
